@@ -14,7 +14,7 @@ async function main() {
       variant: 'Silver, 256GB',
       mrp: 134900,
       price: 127400,
-      imageUrl: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&q=80&w=400',
+      imageUrl: '/iphone-silver.jpg',
       emiPlans: {
         create: [
           { monthlyPayment: 44967, tenureMonths: 3, interestRate: 0, cashbackAmount: 7500 },
@@ -37,7 +37,7 @@ async function main() {
       variant: 'Gold, 256GB',
       mrp: 134900,
       price: 127400,
-      imageUrl: 'https://images.unsplash.com/photo-1695048064975-d227fce89953?auto=format&fit=crop&q=80&w=400',
+      imageUrl: '/iphone-gold.jpg',
       emiPlans: {
         create: [
           { monthlyPayment: 44967, tenureMonths: 3, interestRate: 0, cashbackAmount: 7500 },
@@ -60,7 +60,7 @@ async function main() {
       variant: 'Titanium Black, 256GB',
       mrp: 129999,
       price: 119999,
-      imageUrl: 'https://images.unsplash.com/photo-1708892403980-fc02196af57a?auto=format&fit=crop&q=80&w=400',
+      imageUrl: '/samsung-black.jpg',
       emiPlans: {
         create: [
           { monthlyPayment: 40000, tenureMonths: 3, interestRate: 0, cashbackAmount: 5000 },
@@ -83,7 +83,7 @@ async function main() {
       variant: 'Titanium Gray, 256GB',
       mrp: 129999,
       price: 119999,
-      imageUrl: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&q=80&w=400',
+      imageUrl: '/samsung-gray.jpg',
       emiPlans: {
         create: [
           { monthlyPayment: 40000, tenureMonths: 3, interestRate: 0, cashbackAmount: 5000 },
@@ -106,7 +106,7 @@ async function main() {
       variant: 'Space Black, 512GB',
       mrp: 169900,
       price: 159900,
-      imageUrl: 'https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&q=80&w=400',
+      imageUrl: '/macbook-black.jpg',
       emiPlans: {
         create: [
           { monthlyPayment: 53300, tenureMonths: 3, interestRate: 0, cashbackAmount: 10000 },
@@ -129,7 +129,7 @@ async function main() {
       variant: 'Silver, 512GB',
       mrp: 169900,
       price: 159900,
-      imageUrl: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=400',
+      imageUrl: '/macbook-silver.jpg',
       emiPlans: {
         create: [
           { monthlyPayment: 53300, tenureMonths: 3, interestRate: 0, cashbackAmount: 10000 },
