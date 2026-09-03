@@ -70,33 +70,35 @@ export default function ProductDetails() {
             <img src={product.imageUrl} alt={product.name} />
           </div>
           
-          <div className={styles.finishes}>
-            <p>Available in {product.allFinishes?.length || 1} finishes</p>
-            <div className={styles.dots}>
-              {product.allFinishes?.map((finish) => {
-                let dotColor = '#e2e2e2';
-                const v = finish.variant.toLowerCase();
-                if (v.includes('gold') || v.includes('desert')) dotColor = '#E6C9A8';
-                else if (v.includes('natural')) dotColor = '#C1BFAF';
-                else if (v.includes('black')) dotColor = '#2F2F2F';
-                else if (v.includes('violet')) dotColor = '#594A70';
-                else if (v.includes('yellow')) dotColor = '#E8D499';
-                else if (v.includes('blue')) dotColor = '#3F4E5A';
-                else if (v.includes('gray') || v.includes('grey') || v.includes('titanium')) dotColor = '#7A7A7A';
-                else if (v.includes('silver') || v.includes('white')) dotColor = '#F5F5F0';
+          {product.allFinishes && product.allFinishes.length > 1 && (
+            <div className={styles.finishes}>
+              <p>Available in {product.allFinishes.length} finishes</p>
+              <div className={styles.dots}>
+                {product.allFinishes.map((finish) => {
+                  let dotColor = '#e2e2e2';
+                  const v = finish.variant.toLowerCase();
+                  if (v.includes('gold') || v.includes('desert')) dotColor = '#E6C9A8';
+                  else if (v.includes('natural')) dotColor = '#C1BFAF';
+                  else if (v.includes('black')) dotColor = '#2F2F2F';
+                  else if (v.includes('violet')) dotColor = '#594A70';
+                  else if (v.includes('yellow')) dotColor = '#E8D499';
+                  else if (v.includes('blue')) dotColor = '#3F4E5A';
+                  else if (v.includes('gray') || v.includes('grey') || v.includes('titanium')) dotColor = '#7A7A7A';
+                  else if (v.includes('silver') || v.includes('white')) dotColor = '#F5F5F0';
 
-                return (
-                  <Link href={`/products/${finish.slug}`} key={finish.slug}>
-                    <span 
-                      className={`${styles.dot} ${product.slug === finish.slug || params.slug === finish.slug ? styles.dotSelected : ''}`}
-                      style={{ backgroundColor: dotColor }}
-                      title={finish.variant}
-                    ></span>
-                  </Link>
-                );
-              })}
+                  return (
+                    <Link href={`/products/${finish.slug}`} key={finish.slug}>
+                      <span 
+                        className={`${styles.dot} ${product.slug === finish.slug || params.slug === finish.slug ? styles.dotSelected : ''}`}
+                        style={{ backgroundColor: dotColor }}
+                        title={finish.variant}
+                      ></span>
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Right Column */}
