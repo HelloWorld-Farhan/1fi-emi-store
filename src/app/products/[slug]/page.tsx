@@ -6,7 +6,7 @@ import styles from './product.module.css';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
-type ProductDetail = { name: string; variant: string; price: number; mrp: number; imageUrl: string; emiPlans: { id: string; monthlyPayment: number; tenureMonths: number; interestRate: number; cashbackAmount: number; }[]; error?: string; };
+type ProductDetail = { name: string; variant: string; price: number; mrp: number; imageUrl: string; emiPlans: { id: string; monthlyPayment: number; tenureMonths: number; interestRate: number; cashbackAmount: number; }[]; allFinishes?: { slug: string; variant: string; }[]; error?: string; slug?: string; };
 
 export default function ProductDetails() {
   const params = useParams();
@@ -71,11 +71,26 @@ export default function ProductDetails() {
           </div>
           
           <div className={styles.finishes}>
-            <p>Available in 3 finishes</p>
+            <p>Available in {product.allFinishes?.length || 1} finishes</p>
             <div className={styles.dots}>
-              <span className={styles.dot} style={{ backgroundColor: '#e2e2e2' }}></span>
-              <span className={styles.dot} style={{ backgroundColor: '#F06500' }}></span>
-              <span className={styles.dot} style={{ backgroundColor: '#475569' }}></span>
+              {product.allFinishes?.map((finish) => {
+                let dotColor = '#e2e2e2';
+                const v = finish.variant.toLowerCase();
+                if (v.includes('gold') || v.includes('natural')) dotColor = '#E3D7B7';
+                else if (v.includes('black')) dotColor = '#2F2F2F';
+                else if (v.includes('gray') || v.includes('grey') || v.includes('titanium')) dotColor = '#7A7A7A';
+                else if (v.includes('silver') || v.includes('white')) dotColor = '#F5F5F0';
+
+                return (
+                  <Link href={`/products/${finish.slug}`} key={finish.slug}>
+                    <span 
+                      className={`${styles.dot} ${product.slug === finish.slug || params.slug === finish.slug ? styles.dotSelected : ''}`}
+                      style={{ backgroundColor: dotColor }}
+                      title={finish.variant}
+                    ></span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>

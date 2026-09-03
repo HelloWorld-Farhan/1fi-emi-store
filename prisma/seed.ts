@@ -6,7 +6,7 @@ async function main() {
   await prisma.emiPlan.deleteMany()
   await prisma.product.deleteMany()
 
-  // Product 1: iPhone 17 Pro
+  // Product 1: iPhone 17 Pro Silver
   await prisma.product.create({
     data: {
       slug: 'apple-iphone-17-pro-silver-256-gb',
@@ -14,7 +14,7 @@ async function main() {
       variant: 'Silver, 256GB',
       mrp: 134900,
       price: 127400,
-      imageUrl: '/iphone.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&q=80&w=400',
       emiPlans: {
         create: [
           { monthlyPayment: 44967, tenureMonths: 3, interestRate: 0, cashbackAmount: 7500 },
@@ -29,6 +29,7 @@ async function main() {
     }
   })
 
+  // Product 2: iPhone 17 Pro Gold
   await prisma.product.create({
     data: {
       slug: 'apple-iphone-17-pro-gold-256-gb',
@@ -36,19 +37,22 @@ async function main() {
       variant: 'Gold, 256GB',
       mrp: 134900,
       price: 127400,
-      imageUrl: '/iphone.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1695048064975-d227fce89953?auto=format&fit=crop&q=80&w=400',
       emiPlans: {
         create: [
           { monthlyPayment: 44967, tenureMonths: 3, interestRate: 0, cashbackAmount: 7500 },
           { monthlyPayment: 22483, tenureMonths: 6, interestRate: 0, cashbackAmount: 7500 },
           { monthlyPayment: 11242, tenureMonths: 12, interestRate: 0, cashbackAmount: 7500 },
           { monthlyPayment: 5621, tenureMonths: 24, interestRate: 0, cashbackAmount: 7500 },
+          { monthlyPayment: 4297, tenureMonths: 36, interestRate: 10.5, cashbackAmount: 7500 },
+          { monthlyPayment: 3385, tenureMonths: 48, interestRate: 10.5, cashbackAmount: 7500 },
+          { monthlyPayment: 2842, tenureMonths: 60, interestRate: 10.5, cashbackAmount: 7500 },
         ]
       }
     }
   })
 
-  // Product 2: Samsung Galaxy S24 Ultra
+  // Product 3: Samsung S24 Ultra Black
   await prisma.product.create({
     data: {
       slug: 'samsung-galaxy-s24-ultra-titanium-black-256-gb',
@@ -56,17 +60,22 @@ async function main() {
       variant: 'Titanium Black, 256GB',
       mrp: 129999,
       price: 119999,
-      imageUrl: '/samsung.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1708892403980-fc02196af57a?auto=format&fit=crop&q=80&w=400',
       emiPlans: {
         create: [
           { monthlyPayment: 40000, tenureMonths: 3, interestRate: 0, cashbackAmount: 5000 },
           { monthlyPayment: 20000, tenureMonths: 6, interestRate: 0, cashbackAmount: 5000 },
           { monthlyPayment: 10000, tenureMonths: 12, interestRate: 0, cashbackAmount: 5000 },
+          { monthlyPayment: 5000, tenureMonths: 24, interestRate: 0, cashbackAmount: 5000 },
+          { monthlyPayment: 3802, tenureMonths: 36, interestRate: 10.5, cashbackAmount: 5000 },
+          { monthlyPayment: 3004, tenureMonths: 48, interestRate: 10.5, cashbackAmount: 5000 },
+          { monthlyPayment: 2525, tenureMonths: 60, interestRate: 10.5, cashbackAmount: 5000 },
         ]
       }
     }
   })
 
+  // Product 4: Samsung S24 Ultra Gray
   await prisma.product.create({
     data: {
       slug: 'samsung-galaxy-s24-ultra-titanium-gray-256-gb',
@@ -74,54 +83,66 @@ async function main() {
       variant: 'Titanium Gray, 256GB',
       mrp: 129999,
       price: 119999,
-      imageUrl: '/samsung.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&q=80&w=400',
       emiPlans: {
         create: [
           { monthlyPayment: 40000, tenureMonths: 3, interestRate: 0, cashbackAmount: 5000 },
           { monthlyPayment: 20000, tenureMonths: 6, interestRate: 0, cashbackAmount: 5000 },
+          { monthlyPayment: 10000, tenureMonths: 12, interestRate: 0, cashbackAmount: 5000 },
+          { monthlyPayment: 5000, tenureMonths: 24, interestRate: 0, cashbackAmount: 5000 },
+          { monthlyPayment: 3802, tenureMonths: 36, interestRate: 10.5, cashbackAmount: 5000 },
+          { monthlyPayment: 3004, tenureMonths: 48, interestRate: 10.5, cashbackAmount: 5000 },
+          { monthlyPayment: 2525, tenureMonths: 60, interestRate: 10.5, cashbackAmount: 5000 },
         ]
       }
     }
   })
 
-  // Product 3: MacBook Pro 14
+  // Product 5: MacBook Pro Space Black
   await prisma.product.create({
     data: {
-      slug: 'apple-macbook-pro-14-m3-space-black-512-gb',
-      name: 'MacBook Pro 14" M3',
+      slug: 'apple-macbook-pro-m3-space-black-512-gb',
+      name: 'MacBook Pro M3',
       variant: 'Space Black, 512GB',
       mrp: 169900,
       price: 159900,
-      imageUrl: '/macbook.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&q=80&w=400',
       emiPlans: {
         create: [
           { monthlyPayment: 53300, tenureMonths: 3, interestRate: 0, cashbackAmount: 10000 },
           { monthlyPayment: 26650, tenureMonths: 6, interestRate: 0, cashbackAmount: 10000 },
           { monthlyPayment: 13325, tenureMonths: 12, interestRate: 0, cashbackAmount: 10000 },
-          { monthlyPayment: 5690, tenureMonths: 36, interestRate: 15, cashbackAmount: 0 },
+          { monthlyPayment: 6662, tenureMonths: 24, interestRate: 0, cashbackAmount: 10000 },
+          { monthlyPayment: 5057, tenureMonths: 36, interestRate: 10.5, cashbackAmount: 10000 },
+          { monthlyPayment: 3987, tenureMonths: 48, interestRate: 10.5, cashbackAmount: 10000 },
+          { monthlyPayment: 3345, tenureMonths: 60, interestRate: 10.5, cashbackAmount: 10000 },
         ]
       }
     }
   })
 
+  // Product 6: MacBook Pro Silver
   await prisma.product.create({
     data: {
-      slug: 'apple-macbook-pro-14-m3-silver-512-gb',
-      name: 'MacBook Pro 14" M3',
+      slug: 'apple-macbook-pro-m3-silver-512-gb',
+      name: 'MacBook Pro M3',
       variant: 'Silver, 512GB',
       mrp: 169900,
       price: 159900,
-      imageUrl: '/macbook.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=400',
       emiPlans: {
         create: [
           { monthlyPayment: 53300, tenureMonths: 3, interestRate: 0, cashbackAmount: 10000 },
           { monthlyPayment: 26650, tenureMonths: 6, interestRate: 0, cashbackAmount: 10000 },
+          { monthlyPayment: 13325, tenureMonths: 12, interestRate: 0, cashbackAmount: 10000 },
+          { monthlyPayment: 6662, tenureMonths: 24, interestRate: 0, cashbackAmount: 10000 },
+          { monthlyPayment: 5057, tenureMonths: 36, interestRate: 10.5, cashbackAmount: 10000 },
+          { monthlyPayment: 3987, tenureMonths: 48, interestRate: 10.5, cashbackAmount: 10000 },
+          { monthlyPayment: 3345, tenureMonths: 60, interestRate: 10.5, cashbackAmount: 10000 },
         ]
       }
     }
   })
-
-  console.log('Database seeded with products and EMI plans!')
 }
 
 main()

@@ -96,6 +96,11 @@
   border: 2px solid white;
   box-shadow: 0 0 0 1px var(--border);
   cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dotSelected {
+  box-shadow: 0 0 0 2px var(--primary);
 }
 
 .detailsSection {

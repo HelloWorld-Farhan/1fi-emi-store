@@ -24,7 +24,12 @@ export async function GET(
       return NextResponse.json({ error: 'Product not found' }, { status: 404 });
     }
 
-    return NextResponse.json(product);
+    const allFinishes = await prisma.product.findMany({
+      where: { name: product.name },
+      select: { slug: true, variant: true }
+    });
+
+    return NextResponse.json({ ...product, allFinishes });
   } catch {
     return NextResponse.json({ error: 'Failed to fetch product' }, { status: 500 });
   }
