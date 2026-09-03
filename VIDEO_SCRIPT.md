@@ -1,64 +1,67 @@
-# 1Fi EMI Store - Video Demo Script
+# 1Fi EMI Store - Official Video Demo Script
 
-*Use this script as a guide while recording your 2-5 minute demo video. You don't have to read it word-for-word, just use it to hit all the key points required by the assignment!*
-
----
-
-## 🎬 Part 1: Introduction & UI Walkthrough (1-2 minutes)
-
-**[Action: Open your browser to `http://localhost:3000`. Start recording your screen.]**
-
-**You:** 
-"Hello! My name is Farhan Khalid, and this is my submission for the 1Fi SDE1 Assignment. I was tasked with building an e-commerce platform that mirrors the Snapmint EMI selection UI, utilizing Next.js, TypeScript, and Prisma with SQLite."
-
-**[Action: Scroll down the home page slowly to show the 4 phones.]**
-
-**You:**
-"As you can see on the home page, we have a clean, responsive grid layout displaying our products. I've seeded the database with four products: the iPhone 16 Pro, iPhone 17 Pro, and the Samsung Galaxy S24 and S25 Ultra, complete with authentic images and pricing."
-
-**[Action: Click on the 'iPhone 16 Pro' (or any phone) to navigate to the product page.]**
-
-**You:**
-"When a user clicks on a product, Next.js dynamic routing instantly takes us to the product details page. Here, you'll see a pixel-perfect recreation of the Snapmint UI. On the left, we have the high-resolution product image and pricing details."
-
-**[Action: Hover over the EMI table rows to show the interactive hover states.]**
-
-**You:**
-"On the right is the core requirement of the assignment: the structured EMI Plans table. It clearly displays the Tenure, Interest Rate, Monthly Payment, and Cashback amounts. The layout is built using pure CSS modules to ensure it's lightweight, modern, and perfectly matches the reference design."
+**Project:** 1Fi SDE1 Assignment - EMI Selection UI
+**Candidate Name:** Farhan Khalid
+**Estimated Video Length:** 3-5 Minutes
 
 ---
 
-## 💻 Part 2: Code & Architecture Walkthrough (1-2 minutes)
+## 🎬 Part 1: Introduction & App Navigation (1.5 Minutes)
 
-**[Action: Open VS Code. Show `prisma/schema.prisma`.]**
+**[Action: Open your browser to the Vercel deployed URL or `http://localhost:3000`. Start recording your screen.]**
 
-**You:**
-"Now, let's take a quick look at the codebase. For the database, I used SQLite managed by Prisma ORM. In my `schema.prisma` file, I've defined a one-to-many relationship between the `Product` model and the `EmiPlan` model. This ensures that every product can have its own unique set of 3-to-7 EMI plans seamlessly tied to it."
+**🎤 You (Audio):** 
+"Hello! My name is Farhan Khalid, and this is my video demonstration for the 1Fi SDE1 Assignment. The goal was to build a full-stack e-commerce platform that mirrors the Snapmint EMI selection UI. I built this using Next.js 15, TypeScript, and a Prisma-managed SQLite database."
 
-**[Action: Open `prisma/seed.ts`.]**
+**[Action: Slowly scroll down the Home Page to show the product grid.]**
 
-**You:**
-"To populate the store, I wrote a seed script that programmatically injects the mock data into the SQLite database. This makes the local environment completely reproducible."
+**🎤 You (Audio):**
+"Starting on the Home Page, I’ve implemented a clean, responsive grid layout. The database is seeded with exactly four distinct products: the iPhone 16 Pro, iPhone 17 Pro, and the Samsung Galaxy S24 and S25 Ultra. I’ve ensured that we use authentic, full-resolution local images for each product."
 
-**[Action: Open `src/app/products/[slug]/page.tsx`.]**
+**[Action: Click on the 'Samsung Galaxy S24 Ultra' (or any product) to trigger the Next.js navigation.]**
 
-**You:**
-"For the frontend, I utilized the latest Next.js 15 App Router. This file here is the dynamic route for the product pages. It grabs the `slug` from the URL, queries the SQLite database via Prisma to fetch the specific product and its nested EMI plans, and then renders the UI server-side. This ensures incredibly fast loading times and great SEO."
+**🎤 You (Audio):**
+"When we click on a product, Next.js dynamic routing instantly navigates us to the Product Details page. As you can see, the navigation is incredibly fast thanks to the App Router."
 
-**[Action: Open `src/app/page.tsx`.]**
+**[Action: Hover over the EMI table rows on the right side to show the interactive hover states.]**
 
-**You:**
-"The home page works similarly, querying all products and mapping them into the responsive CSS grid you saw earlier."
+**🎤 You (Audio):**
+"Here is the core requirement of the assignment: the structured EMI Plans table. It's a pixel-perfect recreation of the Snapmint UI. It clearly displays the Tenure, Interest Rate, Monthly Payment, and Cashback amounts. I built this layout using pure CSS modules to ensure it remains lightweight, modern, and perfectly responsive without relying on heavy external frameworks."
 
 ---
 
-## 🏁 Part 3: Conclusion (30 seconds)
+## 💻 Part 2: Code & Architecture Walkthrough (2 Minutes)
 
-**[Action: Go back to the browser showing the beautiful EMI table.]**
+**[Action: Open VS Code. Show the `prisma/schema.prisma` file.]**
 
-**You:**
-"To summarize, the application successfully implements all assignment requirements: a Next.js and TypeScript frontend, a Prisma and SQLite backend, dynamic routing, and a pixel-perfect, interactive EMI selection interface. 
+**🎤 You (Audio):**
+"Now, let me walk you through the architecture. For the database layer, I utilized SQLite managed by Prisma ORM. In the `schema.prisma` file, I've defined a robust one-to-many relationship between the `Product` model and the `EmiPlan` model. This structure guarantees that every product dynamically loads its own unique set of EMI plans."
 
-The code is clean, free of TypeScript errors, and ready for deployment. Thank you for your time and for reviewing my assignment!"
+**[Action: Open the `prisma/seed.ts` file.]**
+
+**🎤 You (Audio):**
+"To populate the store, I wrote a comprehensive seed script that programmatically injects the mock data and image paths into the SQLite database. This ensures the environment is completely reproducible for reviewers."
+
+**[Action: Open `src/app/products/[slug]/page.tsx` file.]**
+
+**🎤 You (Audio):**
+"Moving to the frontend, I utilized the Next.js 15 App Router. This specific file handles the dynamic routing for the product pages. It grabs the `slug` from the URL, queries the SQLite database via Prisma to fetch the specific product and its nested EMI plans, and renders the UI server-side. This results in great SEO and instant page loads."
+
+**[Action: Open `src/app/page.tsx` file.]**
+
+**🎤 You (Audio):**
+"The home page operates similarly, fetching the array of products from the database and mapping them into the responsive CSS grid you saw earlier."
+
+---
+
+## 🏁 Part 3: Vercel Deployment & Conclusion (30 Seconds)
+
+**[Action: Go back to the browser showing the Vercel live URL.]**
+
+**🎤 You (Audio):**
+"Finally, the application is fully deployed to Vercel. I specifically configured the build process to trace and include the SQLite `.db` file within Vercel's serverless environment, ensuring the database works seamlessly in production."
+
+**🎤 You (Audio):**
+"To summarize, the application successfully implements all assignment requirements: a Next.js and TypeScript frontend, a Prisma and SQLite backend, dynamic routing, and a pixel-perfect, interactive EMI selection interface. Thank you for your time and for reviewing my submission!"
 
 **[Action: Stop Recording!]**
