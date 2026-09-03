@@ -22,44 +22,97 @@
   }
 }
 
-.imageSection {
-  background: #f8fafc;
-  border-radius: 16px;
-  padding: 40px;
+.leftColumn {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   position: sticky;
   top: 40px;
 }
 
-.imageSection img {
-  width: 100%;
-  max-width: 400px;
-  object-fit: contain;
+.productHeader {
+  margin-bottom: 24px;
 }
 
-.detailsSection {
-  display: flex;
-  flex-direction: column;
+.badge {
+  color: #DC2626;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: inline-block;
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+  color: var(--foreground);
 }
 
 .variant {
   color: var(--text-muted);
   font-size: 1.1rem;
+}
+
+.imageSection {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 24px;
+}
+
+.imageSection img {
+  width: 100%;
+  max-width: 350px;
+  object-fit: contain;
+}
+
+.finishes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.finishes p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.dots {
+  display: flex;
+  gap: 12px;
+}
+
+.dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px var(--border);
+  cursor: pointer;
+}
+
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .priceContainer {
   display: flex;
   align-items: baseline;
-  gap: 12px;
+  flex-direction: column;
+  gap: 4px;
   margin-bottom: 32px;
 }
 
@@ -70,14 +123,15 @@
 }
 
 .mrp {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
   text-decoration: line-through;
 }
 
 .sectionTitle {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-muted);
   margin-bottom: 16px;
   display: flex;
   align-items: center;
@@ -100,16 +154,17 @@
   display: flex;
   align-items: center;
   gap: 16px;
+  background: #ffffff;
 }
 
 .emiPlanCard:hover {
   border-color: var(--primary);
-  background-color: rgba(240, 101, 0, 0.02);
+  background-color: rgba(255, 90, 0, 0.02);
 }
 
 .emiPlanCard.selected {
   border-color: var(--primary);
-  background-color: rgba(240, 101, 0, 0.05);
+  background-color: rgba(255, 90, 0, 0.04);
   box-shadow: 0 0 0 1px var(--primary);
 }
 
@@ -150,17 +205,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .planMonthly {
   font-size: 1.1rem;
   font-weight: 600;
+  color: var(--foreground);
 }
 
 .planInterest {
   font-size: 0.95rem;
-  color: var(--foreground);
+  color: var(--text-muted);
   font-weight: 500;
 }
 
@@ -168,10 +224,6 @@
   font-size: 0.85rem;
   color: var(--success);
   font-weight: 500;
-  background: var(--success-bg);
-  padding: 2px 8px;
-  border-radius: 4px;
-  display: inline-block;
 }
 
 .proceedBtn {

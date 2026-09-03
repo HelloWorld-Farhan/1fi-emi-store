@@ -58,14 +58,30 @@ export default function ProductDetails() {
       </Link>
       
       <div className={styles.container}>
-        <div className={styles.imageSection}>
-          <img src={product.imageUrl} alt={product.name} />
+        {/* Left Column */}
+        <div className={styles.leftColumn}>
+          <div className={styles.productHeader}>
+            <span className={styles.badge}>NEW</span>
+            <h1 className={styles.title}>{product.name}</h1>
+            <p className={styles.variant}>{product.variant}</p>
+          </div>
+          
+          <div className={styles.imageSection}>
+            <img src={product.imageUrl} alt={product.name} />
+          </div>
+          
+          <div className={styles.finishes}>
+            <p>Available in 3 finishes</p>
+            <div className={styles.dots}>
+              <span className={styles.dot} style={{ backgroundColor: '#e2e2e2' }}></span>
+              <span className={styles.dot} style={{ backgroundColor: '#F06500' }}></span>
+              <span className={styles.dot} style={{ backgroundColor: '#475569' }}></span>
+            </div>
+          </div>
         </div>
 
+        {/* Right Column */}
         <div className={styles.detailsSection}>
-          <h1 className={styles.title}>{product.name}</h1>
-          <p className={styles.variant}>{product.variant}</p>
-          
           <div className={styles.priceContainer}>
             <span className={styles.price}>₹{product.price.toLocaleString()}</span>
             <span className={styles.mrp}>₹{product.mrp.toLocaleString()}</span>

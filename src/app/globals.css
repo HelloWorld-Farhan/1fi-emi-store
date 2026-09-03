@@ -1,23 +1,14 @@
 :root {
   --background: #ffffff;
   --foreground: #111111;
-  --primary: #F06500;
-  --primary-hover: #d15600;
-  --border: #e2e8f0;
-  --text-muted: #64748b;
-  --success: #10b981;
-  --success-bg: #ecfdf5;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0f172a;
-    --foreground: #f8fafc;
-    --border: #334155;
-    --text-muted: #94a3b8;
-    --success: #34d399;
-    --success-bg: rgba(16, 185, 129, 0.1);
-  }
+  --primary: #FF5A00;
+  --primary-hover: #E04A00;
+  --border: #E5E7EB;
+  --text-muted: #6B7280;
+  --success: #059669;
+  --success-bg: #D1FAE5;
+  --card-bg: #ffffff;
+  --app-bg: #F9FAFB;
 }
 
 * {
@@ -28,7 +19,7 @@
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: var(--app-bg);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
