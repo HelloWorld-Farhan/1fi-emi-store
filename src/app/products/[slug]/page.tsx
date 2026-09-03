@@ -76,8 +76,12 @@ export default function ProductDetails() {
               {product.allFinishes?.map((finish) => {
                 let dotColor = '#e2e2e2';
                 const v = finish.variant.toLowerCase();
-                if (v.includes('gold') || v.includes('natural')) dotColor = '#E3D7B7';
+                if (v.includes('gold') || v.includes('desert')) dotColor = '#E6C9A8';
+                else if (v.includes('natural')) dotColor = '#C1BFAF';
                 else if (v.includes('black')) dotColor = '#2F2F2F';
+                else if (v.includes('violet')) dotColor = '#594A70';
+                else if (v.includes('yellow')) dotColor = '#E8D499';
+                else if (v.includes('blue')) dotColor = '#3F4E5A';
                 else if (v.includes('gray') || v.includes('grey') || v.includes('titanium')) dotColor = '#7A7A7A';
                 else if (v.includes('silver') || v.includes('white')) dotColor = '#F5F5F0';
 
